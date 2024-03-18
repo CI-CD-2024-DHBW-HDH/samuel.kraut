@@ -63,8 +63,8 @@ jobs:
           file: Dockerfile
           push: true
           tags: |
-            ghcr.io/ci-cd-2024-dhbw-hdh/samuel.kraut:latest"
-            ghcr.io/ci-cd-2024-dhbw-hdh/samuel.kraut:${{ github.sha }}" # sha ist git commit hash
+            "ghcr.io/ci-cd-2024-dhbw-hdh/samuel.kraut:latest"
+            "ghcr.io/ci-cd-2024-dhbw-hdh/samuel.kraut:${{ github.sha }}" # sha ist git commit hash
   
   
   # deploy-k8:
