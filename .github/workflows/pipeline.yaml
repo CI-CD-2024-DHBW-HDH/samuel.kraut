@@ -7,8 +7,8 @@ on:
       - edit
 
 env:
-  CONTAINER_REGISTRY: "ghcr.io"
-  IMAGE_TAG: "ghcr.io/ci-cd-2024-dhbw-hdh/samuel.kraut"
+  CONTAINER_REGISTRY: ghcr.io
+  IMAGE_TAG: ghcr.io/ci-cd-2024-dhbw-hdh/samuel.kraut
   #K8_NAMESPACE: butter-chicken
   #K8_SECRET_NAME: regcred
 
