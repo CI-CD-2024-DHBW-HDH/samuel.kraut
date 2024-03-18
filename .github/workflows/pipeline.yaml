@@ -38,9 +38,24 @@ jobs:
         
       - name: Build
         run: npm run build
+        
+  deploy-github-page:
+    needs: build-and-test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+      - name: Install Dependencies
+        run: npm ci
+      - name: Build
+        run: npm run build
+      - name: Deploy
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: dist
 
   build-and-push-image:
-    # needs: build-and-test
+    needs: build-and-test
     runs-on: ubuntu-latest
     permissions:
       contents: read
