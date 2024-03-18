@@ -49,7 +49,8 @@ npm run dev
       * Deployment kann automatisch Anzahl der Instanzen von Pods zur Verfügung stellen (Mit ReplicaSet).
       * Rolling Updates und Rollbacks sind mit Deployments möglich.
    * Wofür ein Kubernetes Service gut ist **(2 Punkte)**
-      * Kann Anfragen welche an die Nodes auf einem bestimmten Port ankommen, intern so an die passenden Pods weiterleiten (Loadbalancing)
+      * Managen Netzwerkzugriffe
+      * Kann Anfragen welche an die Nodes auf einem bestimmten Port ankommen (extern), intern so an die passenden Pods weiterleiten (Loadbalancing)
       * Können auch intern für Kommunikation zwischen Pods verwendet werden (auch Loadbalancing mit dabei)
       * Ermöglicht das Client mit Pods interagieren können
 
@@ -57,6 +58,7 @@ npm run dev
       * NodePort Service
       * Kubernetes Proxy
       * Port-forward
+      * Ingress Controller
 
 ## Zusatzaufgabe:
 
