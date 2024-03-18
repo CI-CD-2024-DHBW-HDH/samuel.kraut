@@ -52,7 +52,7 @@ jobs:
       - name: login to container registry
         uses: docker/login-action@v3
         with:
-          registry: "$CONTAINER_REGISTRY"
+          registry: ghcr.io
           username: ${{ github.actor }} # automatisch
           password: ${{ secrets.GITHUB_TOKEN }} # automatisch
 
@@ -63,8 +63,8 @@ jobs:
           file: Dockerfile
           push: true
           tags: |
-            "$IMAGE_TAG:latest"
-            "$IMAGE_TAG:${{ github.sha }}" # sha ist git commit hash
+            ghcr.io/ci-cd-2024-dhbw-hdh/samuel.kraut:latest"
+            ghcr.io/ci-cd-2024-dhbw-hdh/samuel.kraut:${{ github.sha }}" # sha ist git commit hash
   
   
   # deploy-k8:
