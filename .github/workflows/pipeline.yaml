@@ -92,6 +92,9 @@ jobs:
           kubeconfig: ${{ secrets.KUBE_CONFIG }} # anlegen https://github.com/CI-CD-2024-DHBW-HDH/butter-chicken/settings/secrets/actions/new
           # Kubeconfig einfach ins Value einfügen
 
+      - name: Create namespace
+        run: kubectl create namespace samuel-kraut --dry-run=client -o yaml | kubectl apply -f -
+          
       - name: create image registry secret for kubernetes
         uses: Azure/k8s-create-secret@v1.1
         with:
