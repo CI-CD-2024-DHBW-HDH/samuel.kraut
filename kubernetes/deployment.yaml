@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: to-do-deployment
+  labels:
+    app: to-do
+  namespace: samuel-kraut
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: to-do
+  template:
+    metadata:
+      labels:
+        app: to-do
+    spec:
+      containers:
+      - name: to-do
+        image: ghcr.io/ci-cd-2024-dhbw-hdh/samuel.kraut:latest
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 80
+          protocol: TCP
+        resources: {}
+      dnsPolicy: ClusterFirst
+      imagePullSecrets:
+      - name: regcred
+      restartPolicy: Always
+      securityContext: {}
